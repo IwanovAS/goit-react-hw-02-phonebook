@@ -17,6 +17,7 @@ export class ContactForm extends Component {
     e.preventDefault();
     const form = e.currentTarget;
     this.props.handleSubmit(this.state);
+    this.setState({name: '', number: ''});
     form.reset();
   };
 
@@ -30,7 +31,7 @@ export class ContactForm extends Component {
           className={css.formName}
           type="text"
           name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я ])*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           placeholder="Enter name"

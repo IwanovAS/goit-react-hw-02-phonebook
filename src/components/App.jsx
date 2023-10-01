@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Filter } from 'components/Filter/Filter';
 import { ContactList } from 'components/ContactList/ContactList';
+import css from './App.module.css'
 
 export class App extends Component {
   state = {
@@ -85,9 +86,9 @@ export class App extends Component {
           color: '#010101',
         }}
       >
-        <h1>Phonebook</h1>
+        <h1 className={css.title}>Phonebook</h1>
         <ContactForm handleSubmit={this.handleSubmit} />
-        <h2> Contacts</h2>
+        <h2 className={css.contactTitle}> Contacts</h2>
         <Filter filter={filter} handleChange={this.handleChange} />
         <ContactList
           contacts={this.getFilteredContacts()}
