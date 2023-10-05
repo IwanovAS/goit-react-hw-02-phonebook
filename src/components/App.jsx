@@ -21,18 +21,16 @@ export class App extends Component {
     this.setState({ [name]: value });
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    
-    const { name, number } = this.state;
+  handleSubmit = contact => {
+    const { name, number } = contact;
 
     if (!name || !number) {
       alert('Please enter both name and number.');
       return;
-    };
+    }
 
-    const isNameExists = this.state.contacts.some(contact =>
-      contact.name.toLowerCase() === name.toLowerCase()
+    const isNameExists = this.state.contacts.some(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
     );
 
     if (isNameExists) {
